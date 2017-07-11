@@ -92,7 +92,7 @@ def model_optimizer(cross_entropy_sum, learning_rate):
 
 image_size = [384, 384]
 batch_size = 1
-learning_rate = 0.00000001
+learning_rate = 0.000000001
 total_epochs = 80
 
 filename_queue = tf.train.string_input_producer([training_filenames], num_epochs=total_epochs)

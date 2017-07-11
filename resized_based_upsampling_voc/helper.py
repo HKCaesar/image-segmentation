@@ -8,16 +8,6 @@ from scipy.misc import imread
 import numpy as np
 
 
-def model_input(with_input_placeholder=False):
-    input_image_placeholder = tf.placeholder(tf.float32, shape=(None, None, None, 3))
-    input_anotation_placeholder = tf.placeholder(tf.float32, shape=(None, None, None))
-    is_training_placeholder = tf.placeholder(tf.bool)
-
-    if with_input_placeholder:
-        return input_image_placeholder, input_anotation_placeholder, is_training_placeholder
-    else:
-        return is_training_placeholder
-
 def create_tf_shuffle_batch_queue(filename_queue, images_dir, labels_dir, image_size=[384, 384], batch_size=1):
     reader = tf.TextLineReader()
     key, img_filename = reader.read(filename_queue)
